@@ -18,5 +18,12 @@ namespace TestValidation
             string actual = input.Validate_LastName("Sejwar");
             Assert.AreEqual(actual, "Sejwar");
         }
+        [Test]
+        public void InputInString_Test_MobileNumberOfUser()
+        {
+            Validate input = new Validate();
+            string actual = input.Validate_MobileNumber("9862318205");
+            Assert.AreEqual(actual, "9862318205");
+        }
     }
 }
