@@ -39,5 +39,12 @@ namespace TestValidation
             string actual = input.Validate_PassWord("Sejji@123");
             Assert.AreEqual(actual, "Sejji@123");
         }
+        [Test]
+        public void InputInString_Test_PinCode()
+        {
+            Validate input = new Validate();
+            string actual = input.Validate_PinCode("458010");
+            Assert.AreEqual(actual, "458010");
+        }
     }
 }

@@ -7,6 +7,7 @@ namespace RegexValidation
         public static string MOBILENUMBER_REGEX = "^[6-9]{1}[0-9]{9}$";
         public static string EMAIL_REGEX = "^[0-9a-zA-Z]+[.+-_]{0,1}[0-9a-zA-Z]+[@][a-zA-Z]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2,3}){0,1}";
         public static string PASSWORD_REGEX = "^[a-zA-z0-9]{8,}";
+        public const string PINCODE_REGEX = "^[0-9]{6}$";
         public string Validate_FirstName(string firstname)
         {
             if (Regex.IsMatch(firstname, NAME_REGEX))
@@ -66,6 +67,18 @@ namespace RegexValidation
                 Console.WriteLine("Doesn't Match PassWord");
             }
             return PassWord;
+        }
+        public string Validate_PinCode(string PinCode)
+        {
+            if (Regex.IsMatch(PinCode, PINCODE_REGEX))
+            {
+                Console.WriteLine("Match PinCOde");
+            }
+            else
+            {
+                Console.WriteLine("Doesn't Match PinCode");
+            }
+            return PinCode;
         }
     }
 }
