@@ -32,5 +32,12 @@ namespace TestValidation
             string actual = input.Validate_EmailId("sunnyrgpv123@gmil.com");
             Assert.AreEqual(actual, "sunnyrgpv123@gmil.com");
         }
+        [Test]
+        public void InputInString_Test_PassWord()
+        {
+            Validate input = new Validate();
+            string actual = input.Validate_PassWord("Sejji@123");
+            Assert.AreEqual(actual, "Sejji@123");
+        }
     }
 }

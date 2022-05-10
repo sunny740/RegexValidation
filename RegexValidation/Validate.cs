@@ -6,6 +6,7 @@ namespace RegexValidation
         public static string NAME_REGEX = "^[A-Z]{1}[A-Za-z]$";
         public static string MOBILENUMBER_REGEX = "^[6-9]{1}[0-9]{9}$";
         public static string EMAIL_REGEX = "^[0-9a-zA-Z]+[.+-_]{0,1}[0-9a-zA-Z]+[@][a-zA-Z]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2,3}){0,1}";
+        public static string PASSWORD_REGEX = "^[a-zA-z0-9]{8,}";
         public string Validate_FirstName(string firstname)
         {
             if (Regex.IsMatch(firstname, NAME_REGEX))
@@ -53,6 +54,18 @@ namespace RegexValidation
                 Console.WriteLine("Doesn't Match Email");
             }
             return EmailId;
+        }
+        public string Validate_PassWord(string PassWord)
+        {
+            if (Regex.IsMatch(PassWord, PASSWORD_REGEX))
+            {
+                Console.WriteLine("Match PassWord");
+            }
+            else
+            {
+                Console.WriteLine("Doesn't Match PassWord");
+            }
+            return PassWord;
         }
     }
 }
