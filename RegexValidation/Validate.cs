@@ -17,5 +17,17 @@ namespace RegexValidation
             }
             return firstname;
         }
+        public string Validate_LastName(string lastname)
+        {
+            if (Regex.IsMatch(lastname, NAME_REGEX))
+            {
+                Console.WriteLine("Match Last Name");
+            }
+            else
+            {
+                Console.WriteLine("Doesn't Match Last Name");
+            }
+            return lastname;
+        }
     }
 }
