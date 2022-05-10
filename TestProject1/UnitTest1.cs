@@ -25,5 +25,12 @@ namespace TestValidation
             string actual = input.Validate_MobileNumber("9862318205");
             Assert.AreEqual(actual, "9862318205");
         }
+        [Test]
+        public void InputInString_Test_Email()
+        {
+            Validate input = new Validate();
+            string actual = input.Validate_EmailId("sunnyrgpv123@gmil.com");
+            Assert.AreEqual(actual, "sunnyrgpv123@gmil.com");
+        }
     }
 }
