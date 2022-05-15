@@ -11,6 +11,7 @@ namespace RegexValidation
         public static string PASSWORDUPPERCASE_REGEX = "^[A-Z]{1, }[a-z]{8, }$";
         public static string PASSWORD_NUMERICNUM = "^[A-Z]{1, }[a-z]{8, }[0-9]{1, }$";
         public static string PASSWORD_SPECIALCHARACTER = "^[A-Z]{1, }[a-z]{8, }[0-9]{1, }[@$#!*&^%]{1}$";
+        public static string EMAIL_SAMPLE = "^[a-z]+[.+-]{0,1}[0-9]{1, }+[@][a-z0-1][.][a-z]+([.][a-z]{2, }){0,1}$";
         public string Validate_FirstName(string firstname)
         {
             if (Regex.IsMatch(firstname, NAME_REGEX))
@@ -110,6 +111,14 @@ namespace RegexValidation
                 Console.WriteLine("{0} is a valid password", Character);
             }
             return Character;
+        }
+        public string Email_Samples(string Email)
+        {
+            if (Regex.IsMatch(Email, EMAIL_SAMPLE))
+            {
+                Console.WriteLine("{0} is a valid password", Email);
+            }
+            return Email;
         }
     }
 }
