@@ -53,10 +53,18 @@ namespace TestValidation
             string actual = validation.PassWord_Validate("Sunnythepow");
             Assert.AreEqual(actual, "Sunnythepow");
         }
+        [Test]
         public void PasswordTest_WithNumericNumber()
         {
             Validate Numerics = new Validate();
             bool password = Numerics.Numeric_Validate("Sej@123");
+            Assert.IsTrue(password);
+        }
+        [Test]
+        public void PasswordTest_WithOneSpecialCharacter()
+        {
+            Validate validation = new Validate();
+            bool password = validation.Special_Character("Ar28@");
             Assert.IsTrue(password);
         }
     }
