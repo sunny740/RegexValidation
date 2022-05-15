@@ -9,6 +9,7 @@ namespace RegexValidation
         public static string PASSWORD_REGEX = "^[a-zA-z0-9]{8,}";
         public const string PINCODE_REGEX = "^[0-9]{6}$";
         public static string PASSWORDUPPERCASE_REGEX = "^[A-Z]{1, }[a-z]{8, }$";
+        public static string PASSWORD_NUMERICNUM = "^[A-Z]{1, }[a-z]{8, }[0-9]{1, }$";
         public string Validate_FirstName(string firstname)
         {
             if (Regex.IsMatch(firstname, NAME_REGEX))
@@ -89,6 +90,16 @@ namespace RegexValidation
                     Console.WriteLine("{0} is a Valid Password", PassWord);
                 }
                 return PassWord;
+            }
+        }
+        public bool Numeric_Validate(string Numeric)
+        {
+            {
+                if (Regex.IsMatch(Numeric, PASSWORD_NUMERICNUM))
+                {
+                    Console.WriteLine("{0} is a Valid Password", Numeric);
+                }
+                return true;
             }
         }
     }
