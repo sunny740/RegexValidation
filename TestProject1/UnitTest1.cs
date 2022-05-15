@@ -46,5 +46,12 @@ namespace TestValidation
             string actual = input.Validate_PinCode("458010");
             Assert.AreEqual(actual, "458010");
         }
+        [Test]
+        public void InputIsString_WhenTestPassword_ShouldReturnCapitalLatters()
+        {
+            Validate validation = new Validate();
+            string actual = validation.PassWord_Validate("Sunnythepow");
+            Assert.AreEqual(actual, "Sunnythepow");
+        }
     }
 }

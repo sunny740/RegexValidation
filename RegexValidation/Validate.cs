@@ -8,6 +8,7 @@ namespace RegexValidation
         public static string EMAIL_REGEX = "^[0-9a-zA-Z]+[.+-_]{0,1}[0-9a-zA-Z]+[@][a-zA-Z]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2,3}){0,1}";
         public static string PASSWORD_REGEX = "^[a-zA-z0-9]{8,}";
         public const string PINCODE_REGEX = "^[0-9]{6}$";
+        public static string PASSWORDUPPERCASE_REGEX = "^[A-Z]{1, }[a-z]{8, }$";
         public string Validate_FirstName(string firstname)
         {
             if (Regex.IsMatch(firstname, NAME_REGEX))
@@ -56,9 +57,9 @@ namespace RegexValidation
             }
             return EmailId;
         }
-        public string Validate_PassWord(string PassWord)
+        public string Validate_PassWord(string PASSWORD)
         {
-            if (Regex.IsMatch(PassWord, PASSWORD_REGEX))
+            if (Regex.IsMatch(PASSWORD, PASSWORD_REGEX))
             {
                 Console.WriteLine("Match PassWord");
             }
@@ -66,7 +67,7 @@ namespace RegexValidation
             {
                 Console.WriteLine("Doesn't Match PassWord");
             }
-            return PassWord;
+            return PASSWORD;
         }
         public string Validate_PinCode(string PinCode)
         {
@@ -79,6 +80,16 @@ namespace RegexValidation
                 Console.WriteLine("Doesn't Match PinCode");
             }
             return PinCode;
+        }
+        public string PassWord_Validate(string PassWord)
+        {
+            {
+                if (Regex.IsMatch(PassWord, PASSWORDUPPERCASE_REGEX))
+                {
+                    Console.WriteLine("{0} is a Valid Password", PassWord);
+                }
+                return PassWord;
+            }
         }
     }
 }
